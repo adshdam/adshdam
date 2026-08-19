@@ -1,9 +1,11 @@
 import React, { useState } from 'react';
-import { Mail, Check, ArrowUpRight } from 'lucide-react';
+import { Mail, Check, ArrowUpRight, Instagram } from 'lucide-react';
 
 export default function App() {
   const [copied, setCopied] = useState(false);
   const email = 'contacto@hugodam.com';
+  const instagramUser = 'hugodambienesraices';
+  const instagramUrl = `https://instagram.com/${instagramUser}`;
 
   const handleCopyEmail = (e: React.MouseEvent) => {
     e.preventDefault();
@@ -50,7 +52,7 @@ export default function App() {
         >
           <span className="w-1.5 h-1.5 rounded-full bg-[#D7A453] animate-pulse" />
           <span className="text-[11px] sm:text-xs font-semibold tracking-[0.25em] text-[#D7A453] uppercase">
-            HUGO DAM REAL ESTATE
+            HUGO DAM BIENES RAÍCES
           </span>
         </div>
       </header>
@@ -153,8 +155,24 @@ export default function App() {
       </section>
 
       {/* Footer */}
-      <footer id="page-footer" className="w-full max-w-4xl pt-4 pb-2 text-center z-10">
-        <div className="animate-fade-in-up delay-800 flex flex-col sm:flex-row justify-center items-center gap-1.5 sm:gap-2 text-[11px] sm:text-xs text-[#FAFAF8]/45 tracking-wider font-light">
+      <footer id="page-footer" className="w-full max-w-4xl pt-4 pb-2 text-center z-10 flex flex-col items-center gap-3">
+        {/* Instagram handle link */}
+        <div className="animate-fade-in-up delay-800">
+          <a
+            id="instagram-link"
+            href={instagramUrl}
+            target="_blank"
+            rel="noopener noreferrer"
+            className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full border border-[#D7A453]/25 bg-[#031837]/70 hover:border-[#D7A453]/60 hover:bg-[#D7A453]/10 text-[#FAFAF8]/80 hover:text-[#D7A453] transition-all duration-300 group"
+          >
+            <Instagram className="w-3.5 h-3.5 text-[#D7A453] transition-transform duration-300 group-hover:scale-110" />
+            <span className="text-xs tracking-wider font-medium text-[#FAFAF8]/85 group-hover:text-[#D7A453]">
+              @{instagramUser}
+            </span>
+          </a>
+        </div>
+
+        <div className="animate-fade-in-up delay-900 flex flex-col sm:flex-row justify-center items-center gap-1.5 sm:gap-2 text-[11px] sm:text-xs text-[#FAFAF8]/45 tracking-wider font-light">
           <span>© 2026 HUGO DAM</span>
           <span className="hidden sm:inline" aria-hidden="true">·</span>
           <span className="text-[#FAFAF8]/60">Construyendo patrimonio</span>
